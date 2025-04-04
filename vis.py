@@ -396,11 +396,15 @@ def create_simple_animation(history_data, save_path="violin_plot_animation.gif",
             mean_change = ((history_data['mean'][iteration] / history_data['mean'][first_iter]) - 1) * 100
             min_change = ((history_data['min'][iteration] / history_data['min'][first_iter]) - 1) * 100
             max_change = ((history_data['max'][iteration] / history_data['max'][first_iter]) - 1) * 100
+            violation_change = (
+                (history_data['violations'][iteration] / history_data['violations'][first_iter]) - 1
+            ) * 100
             
             change_text = (
                 f"Mean: {'+' if mean_change >= 0 else ''}{mean_change:.1f}%\n"
                 f"Min: {'+' if min_change >= 0 else ''}{min_change:.1f}%\n"
                 f"Max: {'+' if max_change >= 0 else ''}{max_change:.1f}%"
+                f"\nViolations: {'+' if violation_change >= 0 else ''}{violation_change:.1f}%"
             )
         else:
             change_text = "Baseline"
@@ -513,7 +517,7 @@ def create_simple_animation(history_data, save_path="violin_plot_animation.gif",
     )
     # Adjust layout and save
     plt.tight_layout(rect=[0.03, 0, 1, 1])
-    ani.save(save_path, writer='pillow', fps=60, dpi=300)
+    ani.save(save_path, writer='pillow', fps=60, dpi=100)
     plt.close()
     
     print(f"Violin plot animation saved to {save_path}")
