@@ -22,7 +22,7 @@ This work introduces a novel **Graph Neural Network (GNN)-based framework** for 
 ### 📍 Simulation Setup:  
 - **Area**: 500m x 500m  
 - **Topology**: 50 D2D links  
-- **Minimum data rate constraint**: `1e3`  
+- **Minimum data rate constraint**: `1000 Kbps`  
 - **Bandwidth**: 10 Resource Blocks (RBs) of 500 Hz each  
 
 ### 📈 Performance Visualization  
