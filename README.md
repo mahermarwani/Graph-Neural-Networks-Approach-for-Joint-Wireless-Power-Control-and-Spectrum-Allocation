@@ -1,92 +1,121 @@
-# Official repository for Graph Neural Networks Approach for Joint Wireless Power Control and Spectrum Allocation 
 
-The proliferation of wireless technologies and the escalating performance requirements
-of wireless applications have led to diverse and dynamic wireless environments, presenting formidable
-challenges to existing radio resource management (RRM) frameworks. Researchers have proposed utilizing
-deep learning (DL) models to address these challenges to learn patterns from wireless data and leverage
-the extracted information to resolve multiple RRM tasks, such as channel allocation and power control.
-However, it is noteworthy that the majority of existing DL architectures are designed to operate on
-Euclidean data, thereby disregarding a substantial amount of information about the topological structure
-of wireless networks. As a result, the performance of DL models may be suboptimal when applied to
-wireless environments due to the failure to capture the network’s non-Euclidean geometry. This study
-presents a novel approach to address the challenge of power control and spectrum allocation in an N-link
-interference environment with shared channels, utilizing a graph neural network (GNN) based framework.
-In this type of wireless environment, the available bandwidth can be divided into blocks, offering greater
-flexibility in allocating bandwidth to communication links, but also requiring effective management of
-interference. One potential solution to mitigate the impact of interference is to control the transmission
-power of each link while ensuring the network’s data rate performance. Therefore, the power control
-and spectrum allocation problems are inherently coupled and should be solved jointly. The proposed
-GNN-based framework presents a promising avenue for tackling this complex challenge. Our experimental
-results demonstrate that our proposed approach yields significant improvements compared to other existing
-methods in terms of convergence, generalization, performance, and robustness, particularly in the context
-of an imperfect channel.
+---
 
+# 📡 Graph Neural Networks for Joint Wireless Power Control and Spectrum Allocation
 
-## Results:
-### Simulation Results
+Welcome to the official repository for:
 
-#### Scenario: 500x500 Area with 50 D2D Links
-The simulation was conducted in a 500x500 area with 50 Device-to-Device (D2D) communication links. The minimum data rate constraint (`c_min`) was set to 1e3, and the available bandwidth was divided into 10 Resource Blocks (RBs) of 500Hz each.
+> **Graph Neural Networks Approach for Joint Wireless Power Control and Spectrum Allocation**  
+> *By Maher Marwani and Georges Kaddoum*  
+> Published in *IEEE Transactions on Machine Learning in Communications and Networking*, 2024
 
-#### Visualization
-The following animation illustrates the rate performance over time during the simulation:
+---
+
+## 🔬 Overview
+
+This work introduces a novel **Graph Neural Network (GNN)-based framework** for tackling the **joint power control and spectrum allocation** problem in wireless communication networks. It targets Device-to-Device (D2D) communication in complex interference environments where traditional resource allocation techniques fall short due to the non-Euclidean structure of wireless topologies.
+
+---
+
+## 📊 Results & Visualizations
+
+### 📍 Simulation Setup:  
+- **Area**: 500m x 500m  
+- **Topology**: 50 D2D links  
+- **Minimum data rate constraint**: `1e3`  
+- **Bandwidth**: 10 Resource Blocks (RBs) of 500 Hz each  
+
+### 📈 Performance Visualization  
+The following animation showcases the **evolution of data rates** during the simulation:
 
 ![Rate Animation](rate_animation.gif)
 
-This visualization highlights the dynamic behavior of the proposed GNN-based framework in managing power control and spectrum allocation effectively.
+This visual captures the **adaptive behavior** of the GNN-based solution, effectively managing **interference**, **power**, and **spectrum resources** over time.
 
+---
 
-## Installation Instructions
+## 📄 Citation
 
-To set up the environment and get started with the project, follow these steps:
+If you find this work useful in your research or applications, please cite it using the following BibTeX entry:
 
-1. **Clone the Repository**:  
-    Clone this repository to your local machine using the following command:  
-    ```bash
-    git clone https://github.com/mahermarwani/Graph-Neural-Networks-Approach-for-Joint-Wireless-Power-Control-and-Spectrum-Allocation.git
-    cd your-repo-name
-    ```
+```bibtex
+@ARTICLE{10545547,
+  author={Marwani, Maher and Kaddoum, Georges},
+  journal={IEEE Transactions on Machine Learning in Communications and Networking}, 
+  title={Graph Neural Networks Approach for Joint Wireless Power Control and Spectrum Allocation}, 
+  year={2024},
+  volume={2},
+  pages={717-732},
+  doi={10.1109/TMLCN.2024.3408723}
+}
+```
 
-2. **Install Dependencies**:  
-    Install the required dependencies listed in the `requirements.txt` file:  
-    ```bash
-    pip install -r requirements.txt
-    ```
+---
 
-You are now ready to proceed with the steps outlined above to generate data, train the model, and evaluate the results.
+## 🧠 Abstract
 
-To get started with the codebase, follow these steps:
+The rising complexity of wireless environments driven by modern applications and user demands challenges traditional Radio Resource Management (RRM) frameworks. Although Deep Learning (DL) approaches offer adaptive solutions, most are limited to **Euclidean data structures**, ignoring the **graph-based nature** of wireless topologies.
 
-1. **Generate Wireless Networks**:  
-    Use the `wireless.Network.py` script to create wireless network topologies.  
-    ```bash
-    python wireless/Network.py
-    ```
+This work proposes a GNN-based model that directly operates on **non-Euclidean representations** of wireless networks, enabling efficient joint optimization of power control and spectrum allocation. The framework:
+- Adapts to varying interference conditions
+- Supports flexible bandwidth allocation
+- Maintains robust performance in imperfect channel conditions  
+Experimental results demonstrate clear advantages in **convergence speed**, **generalization**, and **robustness** over existing solutions.
 
-2. **Generate Data**:  
-    Use the `data_generation.py` script to generate the required dataset for training and testing.  
-    ```bash
-    python data_generation.py
-    ```
+---
 
-3. **Train the GNN Model**:  
-    Train the Graph Neural Network model using the `training.py` script.  
-    ```bash
-    python training.py
-    ```
+## ⚙️ Installation & Usage
 
-4. **Test the Model**:  
-    Evaluate the trained model using the `testing.py` script.  
-    ```bash
-    python testing.py
-    ```
+Follow the steps below to install dependencies and run simulations:
 
-5. **Solve Using Genetic Algorithm**:  
-    Alternatively, solve the problem using the Genetic Algorithm approach with the `GA_solver.py` script.  
-    ```bash
-    python GA_solver.py
-    ```
+### 🔧 Setup
 
-Ensure all dependencies are installed before running the scripts. Refer to the `requirements.txt` file for the list of dependencies.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/mahermarwani/Graph-Neural-Networks-Approach-for-Joint-Wireless-Power-Control-and-Spectrum-Allocation.git
+   cd Graph-Neural-Networks-Approach-for-Joint-Wireless-Power-Control-and-Spectrum-Allocation
+   ```
 
+2. **Install Required Packages**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+---
+
+### 🚀 Running the Code
+
+1. **Generate Wireless Network Topology**
+   ```bash
+   python wireless/Network.py
+   ```
+
+2. **Generate Training & Testing Data**
+   ```bash
+   python data_generation.py
+   ```
+
+3. **Train the GNN Model**
+   ```bash
+   python training.py
+   ```
+
+4. **Evaluate the Model**
+   ```bash
+   python testing.py
+   ```
+
+5. **Optional: Solve Using Genetic Algorithm**
+   ```bash
+   python GA_solver.py
+   ```
+
+---
+
+## 📬 Questions or Feedback?
+
+Feel free to open an [Issue](https://github.com/mahermarwani/Graph-Neural-Networks-Approach-for-Joint-Wireless-Power-Control-and-Spectrum-Allocation/issues) or submit a [Pull Request](https://github.com/mahermarwani/Graph-Neural-Networks-Approach-for-Joint-Wireless-Power-Control-and-Spectrum-Allocation/pulls) — contributions are welcome!
+
+---
+
+Would you like me to help turn this into a formatted `README.md` file or add badges (e.g. DOI, License, Python version)?
