@@ -1,4 +1,3 @@
-
 ---
 
 # 📡 Graph Neural Networks for Joint Wireless Power Control and Spectrum Allocation
@@ -117,5 +116,3 @@ Follow the steps below to install dependencies and run simulations:
 Feel free to open an [Issue](https://github.com/mahermarwani/Graph-Neural-Networks-Approach-for-Joint-Wireless-Power-Control-and-Spectrum-Allocation/issues) or submit a [Pull Request](https://github.com/mahermarwani/Graph-Neural-Networks-Approach-for-Joint-Wireless-Power-Control-and-Spectrum-Allocation/pulls) — contributions are welcome!
 
 ---
-
-Would you like me to help turn this into a formatted `README.md` file or add badges (e.g. DOI, License, Python version)?
