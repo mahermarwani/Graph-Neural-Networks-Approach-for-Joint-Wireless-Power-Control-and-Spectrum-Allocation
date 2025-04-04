@@ -1,0 +1,34 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS stuff
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.env/
+*.env
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Animation outputs
+*.gif
+*.mp4
+
+# Ignore secret files or configs (custom)
+secrets.json
+config_local.py
+
+# Ignore specific directories 
+DATASET_train_10000_p_1_c=1e3_N=50_rb=10/
